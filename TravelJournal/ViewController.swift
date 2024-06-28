@@ -8,11 +8,17 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var commentTextField: UITextField!
+    
     var locationManager = CLLocationManager()
+    var chosenLatitude = Double()
+    var chosenLongitude = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +40,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let touchedPoint = gestureRecognizer.location(in: self.mapView)
             let touchedCoordinates = self.mapView.convert(touchedPoint, toCoordinateFrom: self.mapView)
             
+            chosenLatitude = touchedCoordinates.latitude
+            chosenLongitude = touchedCoordinates.longitude
+            
             let annotation = MKPointAnnotation()
             annotation.coordinate = touchedCoordinates
-            annotation.title = "New Annotation"
-            annotation.subtitle = "Marked here"
+            annotation.title = nameTextField.text
+            annotation.subtitle = commentTextField.text
             self.mapView.addAnnotation(annotation)
         }
         
@@ -50,5 +59,27 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
     }
+    
+    @IBAction func saveButton(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLocation = NSEntityDescription.insertNewObject(forEntityName: "Locations", into: context)
+        
+        newLocation.setValue(nameTextField.text, forKey: "title")
+        newLocation.setValue(commentTextField.text, forKey: "subtitle")
+        newLocation.setValue(chosenLatitude, forKey: "latitude")
+        newLocation.setValue(chosenLongitude, forKey: "longitude")
+        newLocation.setValue(UUID(), forKey: "id")
+        
+        do {
+            try context.save()
+            print("success")
+        } catch {
+            print("error")
+        }
+    }
+    
 }
 
