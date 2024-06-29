@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D10E14B2C302F6000454786 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10E14A2C302F6000454786 /* ListViewController.swift */; };
 		4DFACFC92C2D40B1007C5D2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFACFC82C2D40B1007C5D2D /* AppDelegate.swift */; };
 		4DFACFCB2C2D40B1007C5D2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFACFCA2C2D40B1007C5D2D /* SceneDelegate.swift */; };
 		4DFACFCD2C2D40B1007C5D2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFACFCC2C2D40B1007C5D2D /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D10E14A2C302F6000454786 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		4DFACFC52C2D40B1007C5D2D /* TravelJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFACFC82C2D40B1007C5D2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DFACFCA2C2D40B1007C5D2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				4DFACFC82C2D40B1007C5D2D /* AppDelegate.swift */,
 				4DFACFCA2C2D40B1007C5D2D /* SceneDelegate.swift */,
 				4DFACFCC2C2D40B1007C5D2D /* ViewController.swift */,
+				4D10E14A2C302F6000454786 /* ListViewController.swift */,
 				4DFACFCE2C2D40B1007C5D2D /* Main.storyboard */,
 				4DFACFD42C2D40B3007C5D2D /* Assets.xcassets */,
 				4DFACFD62C2D40B3007C5D2D /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				4DFACFCD2C2D40B1007C5D2D /* ViewController.swift in Sources */,
 				4DFACFC92C2D40B1007C5D2D /* AppDelegate.swift in Sources */,
 				4DFACFCB2C2D40B1007C5D2D /* SceneDelegate.swift in Sources */,
+				4D10E14B2C302F6000454786 /* ListViewController.swift in Sources */,
 				4DFACFD32C2D40B1007C5D2D /* TravelJournal.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
